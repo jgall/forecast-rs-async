@@ -6,6 +6,7 @@ authors = ["John Gallagher <john.willis.gallagher@gmail.com>"]
 keywords = ["forecast", "weather", "darksky", "async"]
 readme = "README.md"
 license = "Apache-2.0"
+repository = "https://github.com/jgall/forecast-rs-async"
 
 [dependencies]
 serde = "1.0.84"
