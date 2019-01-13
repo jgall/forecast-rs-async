@@ -1,5 +1,5 @@
 [package]
-name = "forcast-async"
+name = "forecast-async"
 description = "An async Rust client for the Dark Sky API."
 version = "0.1.1"
 authors = ["John Gallagher <john.willis.gallagher@gmail.com>"]
