@@ -38,52 +38,6 @@ limitations under the License.*/
 //! can use to construct `ForecastRequest` and `TimeMachineRequest`
 //! instances.
 //!
-//! # Examples
-//!
-//! The following example builds a `ForecastRequest` and a
-//! `TimeMachineRequest` and executes them against the API:
-//!
-//! ```
-//! extern crate reqwest;
-//! extern crate forecast;
-//!
-//! use reqwest::async::Client;
-//!
-//! use forecast::{ApiResponse, ApiClient, ForecastRequestBuilder,
-//!                TimeMachineRequestBuilder, ExcludeBlock, ExtendBy,
-//!                Lang, Units};
-//!
-//! const LAT: f64 = 6.66;
-//! const LONG: f64 = 66.6;
-//! const TIME: u64 = 666;
-//!
-//! fn main() {
-//!     let api_key = "my_dark_sky_api_key"; // please don't actually hardcode your API key!
-//!
-//!     let reqwest_client = Client::new();
-//!     let api_client = ApiClient::new(&reqwest_client);
-//!
-//!     let mut blocks = vec![ExcludeBlock::Daily, ExcludeBlock::Alerts];
-//!
-//!     let forecast_request = ForecastRequestBuilder::new(api_key, LAT, LONG)
-//!         .exclude_block(ExcludeBlock::Hourly)
-//!         .exclude_blocks(&mut blocks)
-//!         .extend(ExtendBy::Hourly)
-//!         .lang(Lang::Arabic)
-//!         .units(Units::Imperial)
-//!         .build();
-//!
-//!     let time_machine_request = TimeMachineRequestBuilder::new(api_key, LAT, LONG, TIME)
-//!         .exclude_block(ExcludeBlock::Hourly)
-//!         .exclude_blocks(&mut blocks)
-//!         .lang(Lang::Arabic)
-//!         .units(Units::Imperial)
-//!         .build();
-//!
-//!     // let forecast_response = api_client.get_forecast(forecast_request).wait().unwrap();
-//!     // let time_machine_response = api_client.get_time_machine(time_machine_request).wait().unwrap();
-//! }
-//! ```
 
 #[macro_use]
 extern crate serde_derive;
@@ -96,7 +50,6 @@ extern crate itertools;
 extern crate reqwest;
 
 extern crate futures;
-extern crate tokio;
 
 use std::borrow::Borrow;
 use std::option::Option;
