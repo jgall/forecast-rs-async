@@ -1,43 +1,4 @@
-/*Copyright 2016-2018 Jesse C. Grillo
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.*/
-
-#![doc(html_root_url = "https://jgrillo.github.io/forecast-rs/")]
 #![feature(trait_alias)]
-
-//! This module exposes an SDK for interacting with the [Dark Sky
-//! API](https://darksky.net/dev/docs/).
-//!
-//! # Overview
-//!
-//! The `ApiClient` is the main entrypoint. It exposes two methods for
-//! sending HTTP requests to the Dark Sky API:
-//!
-//!   1. `ApiClient::get_forecast(request: ForecastRequest)` makes an
-//!   HTTP request against the API and returns a deserialized response
-//!   containing a weather forecast given the current weather
-//!   conditions.
-//!
-//!   2. `ApiClient::get_time_machine(request: TimeMachineRequest)`
-//!   makes a request against the API and returns a deserialized
-//!   response containing weather data corresponding to the `time`
-//!   parameter in the `TimeMachineRequest`.
-//!
-//! For your convenience, there are two builder objects
-//! `ForecastRequestBuilder` and `TimeMachineRequestBuilder` which you
-//! can use to construct `ForecastRequest` and `TimeMachineRequest`
-//! instances.
-//!
 
 #[macro_use]
 extern crate serde_derive;
